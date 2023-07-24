@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz Game</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-    <a href="highscores.html" class="highscore-link">High Scores</a>
-    <div class="quiz-container">
-    
-    <div class="timer">Time Left: 0s</div>
-    </div>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="highscores.html" class="highscore-link">High Scores</a>
+      <div class="timer">Time Left: 0s</div>
+    </header>
+    <main class="quiz-container">
+      <section class="question"></section>
+      <div class="options">
+        <button class="option" data-option="1"></button>
+        <button class="option" data-option="2"></button>
+        <button class="option" data-option="3"></button>
+        <button class="option" data-option="4"></button>
+      </div>
+      <hr/>
+      <div id="result"></div>
+    </main>
     <script src="script,js"></script>
-</body>
+  </body>
 </html>
