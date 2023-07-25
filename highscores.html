@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Highscores Page</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-<body>
-    <a href="index.html" class="highscores-link">Back to Quiz</a>
-    <h1>High Scores</h1>
-    <ul id="highscores-list"></ul>
+  <body>
+    <header>
+      <a href="index.html" class="highscores-link">Back to Quiz</a>
+    </header>
+    <main class="highscores-container">
+      <h1>High Scores</h1>
+      <ul id="highscores-list"></ul>
+      <form id="initials-form">
+        <label for="initial">Enter your initials:</label>
+        <input type="text" id="initials" maxlength="3" required />
+        <button type="submit">Save</button>
+      </form>
+    </main>
     <script src="assets/js/script.js"></script>
-</body>
+  </body>
 </html>
