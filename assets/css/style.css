@@ -1,74 +1,65 @@
 body {
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     margin: 20px;
-}
-
-a.highscore-link {
+  }
+  
+  a.highscore-link {
     position: absolute;
     top: 10px;
     left: 10px;
     color: #028b5e;
     text-decoration: none;
-}
-
-h1 {
+  }
+  
+  h1 {
     margin-bottom: 20px;
-}
-
-.intro-container {
+  }
+  
+  .intro-container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-}
-
-#start-btn {
+  }
+  
+  #start-btn {
     margin-top: 20px;
-    padding-top: 10px 20px;
+    padding: 10px 20px;
     font-size: 16px;
     background-color: #028b5e;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-#start-btn:hover {
-    background-color: #b38900
-}
-
-.timer {
+  }
+  
+  #start-btn:hover {
+    background-color: #b38900;
+  }
+  
+  .timer {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 16px;
-}
-
-.highscore-link {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: #028b5e;
-    text-decoration: none;
-}
-
-.quiz-container {
+  }
+  
+  .quiz-container {
     position: relative;
-}
-
-.question {
+  }
+  
+  .question {
     font-size: 16px;
     margin-bottom: 20px;
-}
-
-.options {
+  }
+  
+  .options {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    flex-direction: column;
-}
-
-button.option {
+  }
+  
+  button.option {
     margin: 5px;
     padding: 10px 20px;
     font-size: 16px;
@@ -77,8 +68,59 @@ button.option {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-button.option:hover {
-    background-color: #b38900
-}
+  }
+  
+  button.option:hover {
+    background-color: #b38900;
+  }
+  
+  .highscores-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #highscores-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #highscores-list li {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  /* Form styles */
+  form#initials-form {
+    display: none;
+    margin-top: 20px;
+  }
+  
+  form#initials-form label {
+    font-size: 18px;
+    margin-right: 5px;
+  }
+  
+  form#initials-form input[type="text"] {
+    font-size: 16px;
+    padding: 5px;
+    width: 50px;
+    text-transform: uppercase;
+  }
+  
+  form#initials-form button {
+    font-size: 16px;
+    padding: 5px 10px;
+    background-color: #028b5e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  form#initials-form button:hover {
+    background-color: #b38900;
+  }
