@@ -37,7 +37,7 @@ const questions = [{
      questionContainer.children[1].children[i].innerHTML = `${i+1}. ${questions[currentQuestion].options[i]}`;
      questionContainer.children[1].children[i].dataset.answer = false;
      if (i === questions[currentQuestion].answer) {
-      questionContainer.children[1].children[i].dataset.answer = true;
+        questionContainer.children[1].children[i].dataset.answer = true;
       }
     }
   }
