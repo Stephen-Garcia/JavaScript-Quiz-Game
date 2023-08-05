@@ -114,7 +114,7 @@ const questions = [{
     let highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
     highScores.push(userScore);
     localStorage.setItem("highScores", JSON.stringify(highScores));
-    window.location.href = 'highscore.html';
+    window.location.href = 'highscores.html';
   }
   
   displayQuestion(currentQuestion);
