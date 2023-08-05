@@ -8,20 +8,25 @@
   </head>
 
   <body>
-    <header>
-      <a href="highscores.html" class="highscore-link">High Scores</a>
-      <div id="timer">Time Left: 0s</div>
+    <header class="page-header">
+      <a href="highscores.html" alt="View Highscores">
+        <h3>View Highscores</h3>
+      </a>
+      <p>Seconds left: <span class="timer">90</span></p>
     </header>
-    <main class="intro-container">
-      <h1>Coding Quiz Game</h1>
-      <p>
-        This is a JavaScript quiz game about space! Try to answer all questions
-        within the time limit. Wrong answers will penalize you by 10 seconds!
-        Give your initials at the end to keep track of your high scores. Good
-        luck!
-      </p>
-      <button type="button" id="start-btn">Start Quiz</button>
-    </main>
+    <div id="wrapper">
+      <main id="container">
+        <h1>Coding Quiz Game</h1>
+        <p>
+          This is a JavaScript quiz game about space! Try to answer all questions
+          within the time limit. Wrong answers will penalize you by 10 seconds!
+          Give your initials at the end to keep track of your high scores. Good
+          luck!
+        </p>
+        <button type="button" id="start-button">Start Quiz</button>
+      </main>
+    </div>
+    </body>
     <script src="assets/js/index.js"></script>
   </body>
 </html>

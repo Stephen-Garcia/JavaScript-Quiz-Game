@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Quiz Questions</title>
-  </head>
-  <body>
-    <header>
-      <a href="highscores.html" class="highscore-link">High Scores</a>
-      <div id="timer">Time Left: 0s</div>
-    </header>
-    <main class="quiz-container">
-      <section class="question"></section>
-      <ul id="question-options">
-        <li class="option" data-answer="false"></li>
-        <li class="option" data-answer="false"></li>
-        <li class="option" data-answer="false"></li>
-        <li class="option" data-answer="false"></li>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Quiz Questions</title>
+</head>
+<body>
+  <header class="page-header">
+    <a href="highscores.html" alt="View Highscores"></a>
+    <div id="timer">Time Left: 90s</div>
+  </header>
+  <main class="quiz-container">
+    <section id="question"></section>
+    <ul id="question-options">
+      <li class="option"></li>
+      <li class="option"></li>
+      <li class="option"></li>
+      <li class="option"></li>
     </ul>
-      <hr/>
-      <span id="result"></span>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="assets/js/quiz.js"></script>
-  </body>
+    <hr>
+    <span id="result"></span>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="assets/js/quiz.js"></script>
+</body>
 </html>

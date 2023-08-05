@@ -2,51 +2,53 @@ const questions = [{
     question: 'Which is the largest planet in our solar system?',
     options: ['Earth', 'Mars', 'Jupiter', 'Saturn', 'Neptune'],
     answer: 2,
-}, {
+  }, {
     question: 'What is the largest moon in our solar system?',
-    options:['Europa', 'Titan', 'Ganymede', 'Enceladus', 'Triton'],
+    options: ['Europa', 'Titan', 'Ganymede', 'Enceladus', 'Triton'],
     answer: 2,
-}, {
+  }, {
     question: 'Which galaxy is the nearest neighbor to our Milky Way galaxy?',
-    options:['Andromeda', 'Triangulum', 'Pinwheel', 'Whirpool', 'Sombrero'],
+    options: ['Andromeda', 'Triangulum', 'Pinwheel', 'Whirlpool', 'Sombrero'],
     answer: 0,
-}, {
+  }, {
     question: 'Which famous spacecraft was launched in 1977 and became the first human-made object to reach interstellar space?',
-    options: ['Voyager1', 'Pioneer10', 'New Horizons', 'Casini-Huygens', 'Juno'],
+    options: ['Voyager1', 'Pioneer10', 'New Horizons', 'Cassini-Huygens', 'Juno'],
     answer: 0,
-}, {
+  }, {
     question: 'What is the phenomenon that occurs when a massive star reaches the end of its life and undergoes a tremendous explosion, briefly outshining an entire galaxy?',
     options: ['Supernova', 'Black Hole', 'Neutron Star', 'Quasar', 'Pulsar'],
     answer: 0,
-}];
-
-let timeLeft = 90;
-let currentQuestion = 0;
-let userScore = {};
-
-const timerSpan = document.querySelector("#timer");
-timerSpan.innerHTML = timeLeft;
-const questionTitle = document.querySelector("#question");
-const questionContainer = document.querySelector("#question-options");
-const result =- document.querySelector("#result");
-const containerEl = document.querySelector("#quiz-container")
-
-function displayQuestion(currentQuestion) {
+  }];
+  
+  let timeLeft = 90;
+  let currentQuestion = 0;
+  let userScore = {};
+  
+  const timerSpan = document.querySelector("#timer");
+  timerSpan.innerHTML = `Time Left: ${timeLeft}s`;
+  
+  const questionTitle = document.querySelector("#question");
+  const questionContainer = document.querySelector("#question-options");
+  const result = document.querySelector("#result");
+  const containerEl = document.querySelector(".quiz-container");
+  
+  function displayQuestion(currentQuestion) {
     questionTitle.innerHTML = questions[currentQuestion].question;
-    for (let i = 0; i < questions[currentQuestion].options.length; i++) {
-        questionContainer.children[1].children[i].innerHTML = `${i+1}. ${questions[currentQuestion].options[i]}`;
-        questionContainer.children[1].children[i].dataset.answer = false;
-        if (i === questions[currentQuestion].answer) {
-            questionContainer.children[1].children[i].dataset.answer = true;
-        }
+    const options = questions[currentQuestion].options;
+  
+    for (let i = 0; i < options.length; i++) {
+      const optionElement = questionContainer.children[i];
+      optionElement.innerHTML = `${i + 1}. ${options[i]}`;
+      optionElement.dataset.answer = i === questions[currentQuestion].answer;
     }
-}
-const answersEl = $("#question-options");
-answersEl.on('click', '.option', function (event) {
+  }
+  
+  const answersEl = $("#question-options");
+  answersEl.on('click', '.option', function (event) {
     playQuiz(event);
-});
-
-function playQuiz(event) {
+  });
+  
+  function playQuiz(event) {
     if (event.target.dataset.answer === "true") {
         result.innerHTML = "Correct!";
     } else {
@@ -56,66 +58,58 @@ function playQuiz(event) {
     currentQuestion++;
     if (currentQuestion < questions.length) {
         displayQuestion(currentQuestion);
-    } else { 
+    } else {
         countDown();
     }
 }
 
-function countDown() {
+  function countDown() {
     timeLeft--;
-    timerSpan.innerHTML = timeLeft;
-
-    if (timeLeft === 0 || timeLeft < 0 || questions.length === currentQuestion) {
-
-        let qh2 = document.getElementById("question-title");
-        let oul = document.getElementById("question-options");
-
-        qh2.remove();
-        oul.remove();
-
-        clearInterval(intervalId);
-        const newTitle = document.createElement('h2');
-        newTitle.textContent = "Quiz Over";
-        const newText = document.createElement('p');
-        newText.textContent = `Your final score is ${timeLeft}.`;
-
-        const inputLabel = $('<label>')
-            .attr('for', 'Initials')
-            .text("Initials: ");
-
-        const inputBox = $('<input>')
-            .attr('type', 'text')
-            .attr('name', 'Initials');
-
-        const submitButton = $('<button>')
-            .attr('type', 'button')
-            .addClass('submit-button')
-            .text("Submit");
-
-        containerEl.prepend(submitButton);
-        containerEl.prepend(inputBox);
-        containerEl.prepend(inputLabel);
-        containerEl.prepend(newText);
-        containerEl.prepend(newTitle);
-
-        submitButton.on('click', function () {
-            let userInitials = $('input[name=Initials]').val();
-            userScore = {
-                'initials': userInitials,
-                'score': timeLeft
-            };
-            submitScore();
-        });
-
+    timerSpan.innerHTML = `Time Left: ${timeLeft}s`;
+  
+    if (timeLeft <= 0 || currentQuestion === questions.length) {
+      const newTitle = document.createElement('h2');
+      newTitle.textContent = "Quiz Over";
+      const newText = document.createElement('p');
+      newText.textContent = `Your final score is ${timeLeft}.`;
+  
+      const inputLabel = document.createElement('label');
+      inputLabel.setAttribute('for', 'Initials');
+      inputLabel.textContent = "Initials: ";
+  
+      const inputBox = document.createElement('input');
+      inputBox.setAttribute('type', 'text');
+      inputBox.setAttribute('name', 'Initials');
+  
+      const submitButton = document.createElement('button');
+      submitButton.setAttribute('type', 'button');
+      submitButton.classList.add('submit-button');
+      submitButton.textContent = "Submit";
+  
+      containerEl.prepend(submitButton);
+      containerEl.prepend(inputBox);
+      containerEl.prepend(inputLabel);
+      containerEl.prepend(newText);
+      containerEl.prepend(newTitle);
+  
+      submitButton.addEventListener('click', function () {
+        let userInitials = document.querySelector('input[name=Initials]').value;
+        userScore = {
+          'initials': userInitials,
+          'score': timeLeft
+        };
+        submitScore();
+      });
     }
-}
-let intervalId = setInterval(countDown, 1000);
-
-function submitScore() {
+  }
+  
+  let intervalId = setInterval(countDown, 1000);
+  
+  function submitScore() {
     let highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
     highScores.push(userScore);
     localStorage.setItem("highScores", JSON.stringify(highScores));
     window.location.href = 'hs.html';
-}
-
-displayQuestion(currentQuestion);
+  }
+  
+  displayQuestion(currentQuestion);
