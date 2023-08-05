@@ -9,20 +9,24 @@
 </head>
 <body>
   <header class="page-header">
-    <a href="highscores.html" alt="View Highscores"></a>
-    <div id="timer">Time Left: 90s</div>
+    <a href="highscores.html" alt="View Highscores">
+      <h3>View Highscores</h3>
+    </a>
+    <p>Seconds left: <span id="timer"></span></p>
   </header>
-  <main class="quiz-container">
-    <section id="question"></section>
-    <ul id="question-options">
-      <li class="option"></li>
-      <li class="option"></li>
-      <li class="option"></li>
-      <li class="option"></li>
-    </ul>
-    <hr>
-    <span id="result"></span>
-  </main>
+  <div id="wrapper">
+    <div id="container">
+      <h2 id="question-title"></h2>
+      <ul id="question-options">
+        <li class="option" data-answer="false"></li>
+        <li class="option" data-answer="false"></li>
+        <li class="option" data-answer="false"></li>
+        <li class="option" data-answer="false"></li>
+      </ul>
+      <hr>
+      <span id="result"></span>
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="assets/js/quiz.js"></script>
 </body>
