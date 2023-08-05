@@ -29,7 +29,7 @@ const questions = [{
   const questionTitle = document.querySelector("#question-title");
   const questionContainer = document.querySelector("#container");
   const result = document.querySelector("#result");
-  const containerEl = document.querySelector("#container");
+  const containerEl = $("#container");
   
   function displayQuestion(currentQuestion) {
     questionTitle.innerHTML = questions[currentQuestion].question;
@@ -37,7 +37,7 @@ const questions = [{
      questionContainer.children[1].children[i].innerHTML = `${i+1}. ${questions[currentQuestion].options[i]}`;
      questionContainer.children[1].children[i].dataset.answer = false;
      if (i === questions[currentQuestion].answer) {
-      questionContainer.children[i].children[i].dataset.answer = true;
+      questionContainer.children[1].children[i].dataset.answer = true;
       }
     }
   }
